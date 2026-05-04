@@ -13,9 +13,10 @@ class HomeController extends GetxController {
     return CrudNotes().realTimeRead();
   }
 
-  Future<void> deleteNote(String id) async {
+  Future<void> deleteNote(String id , String imagePath) async {
     try {
       await CrudNotes().delete(id);
+      await StorageNotes().deleteImage(imagePath);
     } on Exception catch (e) {
       Get.snackbar("Error", e.toString());
     }

@@ -17,4 +17,8 @@ class StorageNotes {
   String getImage(String imagePath) {
     return supaStorage.getPublicUrl(imagePath);
   }
+
+  Future<List<FileObject>> deleteImage(String imagePath) {
+    return supaStorage.remove([imagePath]);
+  }
 }

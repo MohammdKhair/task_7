@@ -72,6 +72,7 @@ class HomeView extends StatelessWidget {
                             onPressed: () {
                               controller.deleteNote(
                                 controller.notes[index]["id"].toString(),
+                                controller.notes[index]["image_path"],
                               );
                             },
                             icon: Icon(Icons.delete),
